@@ -8,6 +8,13 @@ class MapaPage extends StatefulWidget {
 class _MapaPageState extends State<MapaPage> {
   int _selectedIndex = 0;
 
+  List<Color> itemColors = [
+    Colors.greenAccent,
+    Colors.orangeAccent,
+    Colors.lightBlueAccent,
+    Colors.yellow,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,10 +51,10 @@ class _MapaPageState extends State<MapaPage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  mapaItem('Palco Opala'),
-                  mapaItem('Palco O Gritador'),
-                  mapaItem('Palco Jazz'),
-                  mapaItem('Palco Mirante'),
+                  mapaItem('Palco Opala', 0),
+                  mapaItem('Palco O Gritador', 1),
+                  mapaItem('Palco Jazz', 2),
+                  mapaItem('Palco Mirante', 3),
                 ],
               ),
             ),
@@ -95,13 +102,13 @@ class _MapaPageState extends State<MapaPage> {
     );
   }
 
-  Widget mapaItem(String text) {
+  Widget mapaItem(String text, int index) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
       child: Container(
         height: 100,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: itemColors[index % itemColors.length],
           borderRadius: BorderRadius.circular(5),
           border: Border.all(color: Color(0xF33C4998), width: 2),
         ),
