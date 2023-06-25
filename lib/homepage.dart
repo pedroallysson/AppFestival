@@ -7,13 +7,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
+  int _selectedArtista = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: AppBar(//
-        //title: Text('ARTISTAS'),//
-      //),//
       body: Column(
         children: [
           SizedBox(height: 70),
@@ -57,45 +55,50 @@ class _HomePageState extends State<HomePage> {
               childAspectRatio: 0.87,
               padding: EdgeInsets.all(6),
               children: List.generate(artistNames.length, (index) {
-                return Column(
-                  children: [
-                    Expanded(
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          side: BorderSide(
-                            color: Color(0xF33C4998),
-                            width: 2,
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/artistas/artista1');
+                  },
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5),
+                            side: BorderSide(
+                              color: Color(0xF33C4998),
+                              width: 2,
+                            ),
+                          ),
+                          color: artistColors[index],
+                          child: AspectRatio(
+                            aspectRatio: 1,
+                            child: Image.asset(
+                              artistImages[index],
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                        color: artistColors[index],
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: Image.asset(
-                            artistImages[index],
-                            fit: BoxFit.cover,
-                          ),
+                      ),
+                      SizedBox(height: 1),
+                      Text(
+                        artistNames[index],
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Squada One',
+                          color: Color(0xF33C4998),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 1),
-                    Text(
-                      artistNames[index],
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Squada One',
-                        color: Color(0xF33C4998),
+                      SizedBox(height: 1),
+                      Text(
+                        artistPalco[index],
+                        style: TextStyle(
+                          color: Color(0xFF7597D6),
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 1),
-                    Text(
-                      artistPalco[index],
-                      style: TextStyle(
-                        color: Color(0xFF7597D6),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 );
               }),
             ),
@@ -112,7 +115,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.map),
-            label: 'Mapa',
+            label: 'Palcos',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
@@ -138,7 +141,7 @@ class _HomePageState extends State<HomePage> {
           } else if (index == 2) {
             Navigator.pushNamed(context, '/votacao');
           } else if (index == 3) {
-            Navigator.pushNamed(context, '/turismo');
+            Navigator.pushNamed(context, '/pontos_turisticos');
           }
         },
       ),

@@ -24,7 +24,7 @@ class _MapaPageState extends State<MapaPage> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Text(
-              'MAPA',
+              'PALCOS',
               style: TextStyle(
                 fontSize: 70,
                 fontFamily: 'Squada One',
@@ -51,10 +51,30 @@ class _MapaPageState extends State<MapaPage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  mapaItem('Palco Opala', 0),
-                  mapaItem('Palco O Gritador', 1),
-                  mapaItem('Palco Jazz', 2),
-                  mapaItem('Palco Mirante', 3),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/palcos/palco_opala');
+                    },
+                    child: mapaItem('Palco Opala', 0),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/palcos/palco_gritador');
+                    },
+                    child: mapaItem('Palco O Gritador', 1),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/palcos/palco_jazz');
+                    },
+                    child: mapaItem('Palco Jazz', 2),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/palcos/palco_mirante');
+                    },
+                    child: mapaItem('Palco Mirante', 3),
+                  ),
                 ],
               ),
             ),
@@ -70,7 +90,7 @@ class _MapaPageState extends State<MapaPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.map),
-            label: 'Mapa',
+            label: 'Palcos',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
@@ -95,7 +115,7 @@ class _MapaPageState extends State<MapaPage> {
           } else if (index == 2) {
             Navigator.pushNamed(context, '/votacao');
           } else if (index == 3) {
-            Navigator.pushNamed(context, '/turismo');
+            Navigator.pushNamed(context, '/pontos_turisticos');
           }
         },
       ),
