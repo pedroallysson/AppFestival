@@ -157,7 +157,10 @@ class _HomePageState extends State<HomePage> {
       ),
       child: Text(
         text,
-        style: TextStyle(color: Color(0xF33C4998)),
+        style: TextStyle(
+            color: Color(0xF33C4998),
+            fontFamily: 'Squada One',
+            fontSize: 19,),
       ),
     );
   }

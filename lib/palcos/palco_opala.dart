@@ -17,9 +17,9 @@ class PalcoOpalaPage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Center(
                 child: Text(
-                  'MAPA',
+                  'PALCO OPALA',
                   style: TextStyle(
-                    fontSize: 70,
+                    fontSize: 69,
                     fontFamily: 'Squada One',
                     fontWeight: FontWeight.bold,
                     color: Color(0xF33C4998),
@@ -28,29 +28,29 @@ class PalcoOpalaPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16),
-            Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Container(
-                height: 90,
-                decoration: BoxDecoration(
-                  color: Colors.lightGreenAccent,
-                  borderRadius: BorderRadius.circular(5),
-                  border: Border.all(color: Color(0xF33C4998), width: 2),
-                ),
-                child: Center(
-                  child: Text(
-                    'PALCO OPALA',
-                    style: TextStyle(
-                      fontSize: 40,
-                      fontFamily: 'Squada One',
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xF33C4998),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            // SizedBox(height: 16),
+            // Padding(
+            //     padding: EdgeInsets.symmetric(horizontal: 16),
+            //     child: Container(
+            //     height: 90,
+            //     decoration: BoxDecoration(
+            //       color: Colors.lightGreenAccent,
+            //       borderRadius: BorderRadius.circular(5),
+            //       border: Border.all(color: Color(0xF33C4998), width: 2),
+            //     ),
+            //     child: Center(
+            //       child: Text(
+            //         'PALCO OPALA',
+            //         style: TextStyle(
+            //           fontSize: 40,
+            //           fontFamily: 'Squada One',
+            //           fontWeight: FontWeight.bold,
+            //           color: Color(0xF33C4998),
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
             SizedBox(height: 16),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),

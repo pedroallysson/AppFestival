@@ -40,13 +40,32 @@ class Artista1Page extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
-                  Icon(Icons.map, color: Color(0xF33C4998)),
+                  Icon(Icons.map, color: Colors.grey),
                   SizedBox(width: 8),
                   Text(
                     'Palco Opala',
                     style: TextStyle(
                       fontSize: 18,
-                      color: Color(0xF33C4998),
+                      fontFamily: 'Squada One',
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                children: [
+                  Icon(Icons.date_range, color: Colors.grey),
+                  SizedBox(width: 8),
+                  Text(
+                    '08 de Junho',
+                    style: TextStyle(
+                      fontFamily: 'Squada One',
+                      fontSize: 18,
+                      color: Colors.grey,
                     ),
                   ),
                 ],

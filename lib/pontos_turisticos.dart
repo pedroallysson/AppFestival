@@ -161,7 +161,7 @@ class TurismoCard extends StatelessWidget {
           Image.asset(
             fotoPath,
             width: double.infinity,
-            height: 220,
+            height: 200,
             fit: BoxFit.cover,
           ),
           Padding(
