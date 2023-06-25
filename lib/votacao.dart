@@ -28,33 +28,47 @@ class VotacaoPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'Artistas',
+                'Vote na sua banda favorita. A mais votada estará presente na próxima edição do Festival de Inverno de Pedro II!',
                 style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  color: Colors.grey,
                 ),
+                textAlign: TextAlign.justify,
               ),
             ),
             SizedBox(height: 16),
             Column(
               children: [
                 ArtistaCard(
-                  nome: 'Artista 1',
+                  nome: 'Vanessa da Mata',
                   votos: 65,
                 ),
                 ArtistaCard(
-                  nome: 'Artista 2',
+                  nome: 'Duda Beat',
                   votos: 45,
                 ),
                 ArtistaCard(
-                  nome: 'Artista 3',
-                  votos: 82,
+                  nome: 'Frejat',
+                  votos: 32,
+                ),
+                ArtistaCard(
+                  nome: 'Lagum',
+                  votos: 27,
+                ),
+                ArtistaCard(
+                  nome: 'Chico César',
+                  votos: 21,
+                ),
+                ArtistaCard(
+                  nome: 'Anavitória',
+                  votos: 18,
                 ),
               ],
             ),
           ],
         ),
       ),
+
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
@@ -125,8 +139,8 @@ class ArtistaCard extends StatelessWidget {
                 onPressed: () {
                   // Lógica para votar no artista
                 },
-                icon: Icon(Icons.favorite),
-                color: Colors.red,
+                icon: Icon(Icons.favorite_border),
+                color: Colors.grey,
               ),
               SizedBox(width: 8),
               Text(

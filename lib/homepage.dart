@@ -7,7 +7,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
-  int _selectedArtista = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +109,7 @@ class _HomePageState extends State<HomePage> {
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.music_note, color: Color(0xF33C4998)),
+            icon: Icon(Icons.music_note),
             label: 'Artistas',
           ),
           BottomNavigationBarItem(
@@ -270,7 +269,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-
-
 }
