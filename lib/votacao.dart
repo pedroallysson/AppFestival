@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+/*import 'package:http/http.dart' as http;*/
 
 class VotacaoPage extends StatelessWidget {
   @override
@@ -107,7 +108,7 @@ class VotacaoPage extends StatelessWidget {
   }
 }
 
-class ArtistaCard extends StatelessWidget {
+class ArtistaCard extends StatefulWidget {
   final String nome;
   final int votos;
 
@@ -116,6 +117,13 @@ class ArtistaCard extends StatelessWidget {
     required this.nome,
     required this.votos,
   }) : super(key: key);
+
+  @override
+  _ArtistaCardState createState() => _ArtistaCardState();
+}
+
+class _ArtistaCardState extends State<ArtistaCard> {
+  bool _votado = false;
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +136,7 @@ class ArtistaCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  nome,
+                  widget.nome,
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -137,14 +145,18 @@ class ArtistaCard extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {
-                  // Lógica para votar no artista
+                  setState(() {
+                    _votado = !_votado;
+                  });
                 },
-                icon: Icon(Icons.favorite_border),
-                color: Colors.grey,
+                icon: Icon(
+                  _votado ? Icons.favorite : Icons.favorite_border,
+                  color: _votado ? Colors.red : Colors.grey,
+                ),
               ),
               SizedBox(width: 8),
               Text(
-                '$votos%',
+                '${widget.votos}%',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey,
@@ -157,3 +169,4 @@ class ArtistaCard extends StatelessWidget {
     );
   }
 }
+
