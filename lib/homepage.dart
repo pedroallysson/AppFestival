@@ -56,7 +56,25 @@ class _HomePageState extends State<HomePage> {
               children: List.generate(artistNames.length, (index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/artistas/artista1');
+                    if (index == 0) {
+                      Navigator.pushNamed(context, '/artistas/artista1');
+                    } else if (index == 1) {
+                      Navigator.pushNamed(context, '/artistas/artista2');
+                    } else if (index == 2) {
+                      Navigator.pushNamed(context, '/artistas/artista3');
+                    } else if (index == 3) {
+                      Navigator.pushNamed(context, '/artistas/artista4');
+                    }else if (index == 4) {
+                      Navigator.pushNamed(context, '/artistas/artista5');
+                    }else if (index == 5) {
+                      Navigator.pushNamed(context, '/artistas/artista6');
+                    }else if (index == 6) {
+                      Navigator.pushNamed(context, '/artistas/artista7');
+                    }else if (index == 7) {
+                      Navigator.pushNamed(context, '/artistas/artista8');
+                    }else if (index == 8) {
+                      Navigator.pushNamed(context, '/artistas/artista9');
+                    }
                   },
                   child: Column(
                     children: [

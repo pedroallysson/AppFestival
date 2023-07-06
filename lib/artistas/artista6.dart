@@ -1,56 +1,86 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class PalcoMirantePage extends StatelessWidget {
+class Artista6Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: AppBar(//
-      //title: Text('Mapa'),//
-      //),//
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 70),
+            Container(
+              width: double.infinity,
+              height: 240,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/flavio.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            SizedBox(height: 16),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Center(
                 child: Text(
-                  'PALCO MIRANTE',
+                  'Flávio Venturini',
                   style: TextStyle(
-                    fontSize: 58,
+                    fontSize: 41,
                     fontFamily: 'Squada One',
                     fontWeight: FontWeight.bold,
                     color: Color(0xF33C4998),
                   ),
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.left,
                 ),
+              ),
+            ),
+            SizedBox(height: 16),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                children: [
+                  Icon(Icons.map, color: Colors.grey),
+                  SizedBox(width: 8),
+                  Text(
+                    'Palco Opala',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'Squada One',
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                children: [
+                  Icon(Icons.date_range, color: Colors.grey),
+                  SizedBox(width: 8),
+                  Text(
+                    '08 de Junho',
+                    style: TextStyle(
+                      fontFamily: 'Squada One',
+                      fontSize: 18,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 16),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'O Palco Mirante do Gritador, na Serra dos Matões, inicia na sexta-feira, com apresentações a partir das 16h. Sobem ao palco, com a paradisíaca vista do Morro do Gritador, os artistas musicais Leone Rodrigues, Monise Borges e Jam Lounge Session.',
+                'Flávio Venturini nasceu em Belo Horizonte, em 23 de julho de 1949. Descobriu a música aos 3 anos de idade. Aos 15 anos começou sua formação musical. Acordeon foi o seu primeiro instrumento. Logo depois ganhou de seu pai um piano, e assim começou seus estudos na Fundação de Educação Artística de Belo Horizonte, onde estudou percepção musical e piano.',
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.grey,
                 ),
                 textAlign: TextAlign.justify,
-              ),
-            ),
-            SizedBox(height: 16),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Card(
-                child: Container(
-                  width: double.infinity,
-                  child: Image.asset(
-                    'assets/mirante2.png',
-                    fit: BoxFit.cover,
-                  ),
-                ),
               ),
             ),
             SizedBox(height: 16),
@@ -62,25 +92,30 @@ class PalcoMirantePage extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Container(
-                        height: 100,
+                        height: 90,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          border: Border.all(color: Color(0xF33C4998), width: 2),
+                          border: Border.all(
+                            color: Color(0xF33C4998),
+                            width: 2,
+                          ),
                         ),
                         child: ElevatedButton.icon(
                           onPressed: () async {
-                            const url = 'https://goo.gl/maps/G8Jm5GGGz88vma296';
+                            const url = 'https://youtu.be/0LvYzpDLv40';
                             if (await canLaunch(url)) {
                               await launch(url);
                             } else {
                               throw 'Não foi possível abrir o URL: $url';
                             }
                           },
-                          icon: Icon(Icons.location_on,
+                          icon: Icon(
+                            Icons.play_circle_filled,
                             color: Color(0xF33C4998), // Cor do ícone
-                            size: 40, ),
+                            size: 40,
+                          ),
                           label: Text(
-                            'COMO CHEGAR?',
+                            'Escutar',
                             style: TextStyle(
                               fontSize: 40,
                               fontFamily: 'Squada One',
@@ -140,4 +175,3 @@ class PalcoMirantePage extends StatelessWidget {
     );
   }
 }
-
