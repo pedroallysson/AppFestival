@@ -61,7 +61,7 @@ class Artista4Page extends StatelessWidget {
                   Icon(Icons.date_range, color: Colors.grey),
                   SizedBox(width: 8),
                   Text(
-                    '08 de Junho',
+                    '11 de Junho',
                     style: TextStyle(
                       fontFamily: 'Squada One',
                       fontSize: 18,
