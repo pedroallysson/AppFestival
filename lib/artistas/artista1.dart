@@ -1,7 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
 
 class Artista1Page extends StatelessWidget {
+  Future<void> _openVideoPopup(BuildContext context) async {
+    final String videoUrl = 'https://www.youtube.com/watch?v=v4k6JgC7UVA';
+
+    await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          child: Container(
+            width: double.infinity,
+            height: 300,
+            child: YoutubePlayer(
+              controller: YoutubePlayerController(
+                initialVideoId: YoutubePlayer.convertUrlToId(videoUrl)!,
+                flags: YoutubePlayerFlags(
+                  autoPlay: true,
+                  mute: false,
+                ),
+              ),
+              showVideoProgressIndicator: true,
+              progressIndicatorColor: Colors.amber,
+              progressColors: ProgressBarColors(
+                playedColor: Colors.amber,
+                handleColor: Colors.amberAccent,
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,52 +118,32 @@ class Artista1Page extends StatelessWidget {
             SizedBox(height: 16),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Padding(
-                padding: EdgeInsets.only(bottom: 16),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 90,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(
-                            color: Color(0xF33C4998),
-                            width: 2,
-                          ),
-                        ),
-                        child: ElevatedButton.icon(
-                          onPressed: () async {
-                            const url = 'https://www.youtube.com/watch?v=v4k6JgC7UVA';
-                            if (await canLaunch(url)) {
-                              await launch(url);
-                            } else {
-                              throw 'Não foi possível abrir o URL: $url';
-                            }
-                          },
-                          icon: Icon(
-                            Icons.play_circle_filled,
-                            color: Color(0xF33C4998), // Cor do ícone
-                            size: 40,
-                          ),
-                          label: Text(
-                            'Escutar',
-                            style: TextStyle(
-                              fontSize: 40,
-                              fontFamily: 'Squada One',
-                              color: Color(0xF33C4998),
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lightGreenAccent, // Cor do botão
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
-                        ),
+              child: SizedBox(
+                width: double.infinity,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 16),
+                  child: ElevatedButton.icon(
+                    onPressed: () => _openVideoPopup(context),
+                    icon: Icon(
+                      Icons.play_circle_filled,
+                      color: Color(0xF33C4998), // Cor do ícone
+                      size: 40,
+                    ),
+                    label: Text(
+                      'Escutar',
+                      style: TextStyle(
+                        fontSize:60,
+                        fontFamily: 'Squada One',
+                        color: Color(0xF33C4998),
                       ),
                     ),
-                  ],
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.lightGreenAccent, // Cor do botão
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),

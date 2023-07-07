@@ -41,6 +41,8 @@ dependencies:
   flutter_launcher_icons: ^0.9.1
   cupertino_icons: ^1.0.2
   http: ^0.13.6
+  flutter_inappwebview: ^5.0.0
+  youtube_player_flutter: ^8.1.2
 
 flutter_native_splash:
   color: "#E58112"
