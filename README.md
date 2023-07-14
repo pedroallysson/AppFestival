@@ -1,16 +1,9 @@
-# festival
+<h1 align="center"> AppFestivalDeInvernoP2 </h1>
 
-A new Flutter project.
+![Telas do APP](https://github.com/pedroallysson/AppFestival/blob/1aa963be7463099a2725bd9e40ac36f0cae72e2c/assets/info%20git.png)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# 🖥️ Tecnologias Utilizadas
+- Dart
+- Flutter
+  
+[![My Skills](https://skillicons.dev/icons?i=dart,flutter)](https://skillicons.dev)
